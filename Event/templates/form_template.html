@@ -1,0 +1,51 @@
+{% load widget_tweaks %} 
+<div class="form-group">
+    <label class="control-label col-sm-2">Title</label>
+    <div class="col-sm-6">
+        {% render_field form.title type="text" class="form-control" id="id_title" placeholder="Title" %}
+    </div>
+    <div class="col-sm-offset-2 col-sm-10">
+        <span class="text-danger small">{{ form.title.errors }}</span>
+    </div>
+
+    <label class="control-label col-sm-2">Date</label>
+    <div class="col-sm-6">
+        {% render_field form.date type="date" class="form-control" id="id_date" placeholder="date" %}
+    </div>
+    <div class="col-sm-offset-2 col-sm-10">
+        <span class="text-danger small">{{ form.date.errors }}</span>
+    </div>
+
+    <label class="control-label col-sm-2">Time</label>
+    <div class="col-sm-6">
+        {% render_field form.time type="time" class="form-control" id="id_time" placeholder="time" %}
+    </div>
+    <div class="col-sm-offset-2 col-sm-10">
+        <span class="text-danger small">{{ form.time.errors }}</span>
+    </div>
+
+    <label class="control-label col-sm-2">Event Type</label>
+    <div class="col-sm-6">
+        {% render_field form.event_type type="text" class="form-control" id="id_type" placeholder="type" %}
+    </div>
+    <div class="col-sm-offset-2 col-sm-10">
+        <span class="text-danger small">{{ form.event_type.errors }}</span>
+    </div>
+    
+    <label class="control-label col-sm-2">Event Logo</label>
+    <div class="col-sm-6">
+        {% render_field form.event_logo type="file" class="form-control" id="id_logo" placeholder="logo" %}
+    </div>
+    <div class="col-sm-offset-2 col-sm-10">
+        <span class="text-danger small">{{ form.event_logo.errors }}</span>
+    </div>
+    
+    <label class="control-label col-sm-2">Detail</label>
+    <div class="col-sm-6">
+        {% render_field form.detail type="text" class="form-control" id="id_detail" placeholder="detail" %}
+    </div>
+    <div class="col-sm-offset-2 col-sm-10">
+        <span class="text-danger small">{{ form.detail.errors }}</span>
+    </div>
+    
+</div>
