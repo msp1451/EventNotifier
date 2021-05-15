@@ -1,10 +1,13 @@
 from celery import Celery
-from django.core import mail
+from django.core.mail import send_mail
+from celery import shared_task
 
 app = Celery()
 @app.task
 def send_email(email, message):
-    emails = (
-    (message, 'temp1451@gmail.com', [email]),
-    )
-    results = mail.send_mass_mail(emails)
+    emails = ('test mail', message, 'temp1451@gmail.com', [email])
+    results = send_mail(*emails)
+
+@shared_task
+def add(x, y):
+    return x+y

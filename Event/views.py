@@ -9,7 +9,7 @@ from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import View
-
+from . import tasks
 
 
 # AUDIO_FILE_TYPES = ['wav', 'mp3', 'ogg']
@@ -101,6 +101,7 @@ class LoginView(View):
         if user is not None:
             if user.is_active:
                 login(request, user)
+                tasks.send_email('patel1451@gmail.com', 'welcome'+username)
                 return redirect('Event:index')
             else:
                 return render(request, 'login.html', {'error_message': 'Your account has been disabled'})
